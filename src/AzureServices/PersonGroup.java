@@ -13,6 +13,18 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 
 public class PersonGroup {
+	
+	private String subscriptionKey;
+	private String server;
+	
+	PersonGroup(String subscriptionKey,String server){
+		
+		this.subscriptionKey = subscriptionKey;
+		this.server = server;
+		
+	}
+	
+	
 
 	public void createPersonGroup(String personGroupId, String name, String userData) {
 		{
@@ -30,14 +42,14 @@ public class PersonGroup {
 				// "westcentralus" in the
 				// URL below with "westus".
 				URIBuilder builder = new URIBuilder(
-						"https://westcentralus.api.cognitive.microsoft.com/face/v1.0/persongroups/" + personGroupId);
+						"https://"+this.server+".api.cognitive.microsoft.com/face/v1.0/persongroups/" + personGroupId);
 
 				URI uri = builder.build();
 				HttpPut request = new HttpPut(uri);
 
 				// Request headers. Replace the example key with your valid subscription key.
 				request.setHeader("Content-Type", "application/json");
-				request.setHeader("Ocp-Apim-Subscription-Key", "f96086b39cb34c728e8ed9124506d9c9");
+				request.setHeader("Ocp-Apim-Subscription-Key", this.subscriptionKey);
 
 				// Request body. The name field is the display name you want for the group (must
 				// be under 128 characters).
@@ -76,7 +88,7 @@ public class PersonGroup {
 			// "westcentralus" in the
 			// URL below with "westus".
 			URIBuilder builder = new URIBuilder(
-					"https://westcentralus.api.cognitive.microsoft.com/face/v1.0/persongroups/" + personGroupId);
+					"https://"+this.server+".api.cognitive.microsoft.com/face/v1.0/persongroups/" + personGroupId);
 
 			URI uri = builder.build();
 
@@ -84,7 +96,7 @@ public class PersonGroup {
 
 			// Request headers. Replace the example key with your valid subscription key.
 			request.setHeader("Content-Type", "application/json");
-			request.setHeader("Ocp-Apim-Subscription-Key", "f96086b39cb34c728e8ed9124506d9c9");
+			request.setHeader("Ocp-Apim-Subscription-Key", this.subscriptionKey);
 
 			// Request body. The name field is the display name you want for the group (must
 			// be under 128 characters).
