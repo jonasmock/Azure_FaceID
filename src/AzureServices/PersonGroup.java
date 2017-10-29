@@ -186,7 +186,7 @@ public class PersonGroup extends Initialize {
 		try {
 
 			URIBuilder builder = new URIBuilder("https://" + super.getServer()
-					+ ".api.cognitive.microsoft.com/face/v1.0/persongroups/" + personGroupId);
+					+ ".api.cognitive.microsoft.com/face/v1.0/persongroups/" + personGroupId+"/train");
 
 			URI uri = builder.build();
 
