@@ -15,16 +15,11 @@ import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 
-public class PersonGroup {
-
-	private String subscriptionKey;
-	private String server;
+public class PersonGroup extends Initialize {
 
 	PersonGroup(String subscriptionKey, String server) {
-
-		this.subscriptionKey = subscriptionKey;
-		this.server = server;
-
+		super(subscriptionKey, server);
+		// TODO Auto-generated constructor stub
 	}
 
 	public void createPersonGroup(String personGroupId, String name, String userData) {
@@ -33,7 +28,7 @@ public class PersonGroup {
 
 			try {
 
-				URIBuilder builder = new URIBuilder("https://" + this.server
+				URIBuilder builder = new URIBuilder("https://" + super.getServer()
 						+ ".api.cognitive.microsoft.com/face/v1.0/persongroups/" + personGroupId);
 
 				URI uri = builder.build();
@@ -41,7 +36,7 @@ public class PersonGroup {
 
 				// Request headers. Replace the example key with your valid subscription key.
 				request.setHeader("Content-Type", "application/json");
-				request.setHeader("Ocp-Apim-Subscription-Key", this.subscriptionKey);
+				request.setHeader("Ocp-Apim-Subscription-Key", super.getSubscriptionKey());
 
 				// Request body. The name field is the display name you want for the group (must
 				// be under 128 characters).
@@ -70,8 +65,8 @@ public class PersonGroup {
 
 		try {
 
-			URIBuilder builder = new URIBuilder(
-					"https://" + this.server + ".api.cognitive.microsoft.com/face/v1.0/persongroups/" + personGroupId);
+			URIBuilder builder = new URIBuilder("https://" + super.getServer()
+					+ ".api.cognitive.microsoft.com/face/v1.0/persongroups/" + personGroupId);
 
 			URI uri = builder.build();
 
@@ -79,7 +74,7 @@ public class PersonGroup {
 
 			// Request headers. Replace the example key with your valid subscription key.
 			request.setHeader("Content-Type", "application/json");
-			request.setHeader("Ocp-Apim-Subscription-Key", this.subscriptionKey);
+			request.setHeader("Ocp-Apim-Subscription-Key", super.getSubscriptionKey());
 
 			HttpResponse response = httpClient.execute(request);
 			HttpEntity entity = response.getEntity();
@@ -100,8 +95,8 @@ public class PersonGroup {
 
 		try {
 
-			URIBuilder builder = new URIBuilder(
-					"https://" + this.server + ".api.cognitive.microsoft.com/face/v1.0/persongroups/" + personGroupId);
+			URIBuilder builder = new URIBuilder("https://" + super.getServer()
+					+ ".api.cognitive.microsoft.com/face/v1.0/persongroups/" + personGroupId);
 
 			URI uri = builder.build();
 
@@ -109,7 +104,7 @@ public class PersonGroup {
 
 			// Request headers. Replace the example key with your valid subscription key.
 			request.setHeader("Content-Type", "application/json");
-			request.setHeader("Ocp-Apim-Subscription-Key", this.subscriptionKey);
+			request.setHeader("Ocp-Apim-Subscription-Key", super.getSubscriptionKey());
 
 			HttpResponse response = httpClient.execute(request);
 			HttpEntity entity = response.getEntity();
@@ -130,7 +125,7 @@ public class PersonGroup {
 
 		try {
 
-			URIBuilder builder = new URIBuilder("https://" + this.server
+			URIBuilder builder = new URIBuilder("https://" + super.getServer()
 					+ ".api.cognitive.microsoft.com/face/v1.0/persongroups/" + personGroupId + "/training");
 
 			URI uri = builder.build();
@@ -139,7 +134,7 @@ public class PersonGroup {
 
 			// Request headers. Replace the example key with your valid subscription key.
 			request.setHeader("Content-Type", "application/json");
-			request.setHeader("Ocp-Apim-Subscription-Key", this.subscriptionKey);
+			request.setHeader("Ocp-Apim-Subscription-Key", super.getSubscriptionKey());
 
 			HttpResponse response = httpClient.execute(request);
 			HttpEntity entity = response.getEntity();
@@ -161,7 +156,7 @@ public class PersonGroup {
 		try {
 
 			URIBuilder builder = new URIBuilder(
-					"https://" + this.server + ".api.cognitive.microsoft.com/face/v1.0/persongroups?top=1000");
+					"https://" + super.getServer() + ".api.cognitive.microsoft.com/face/v1.0/persongroups?top=1000");
 
 			URI uri = builder.build();
 
@@ -169,7 +164,7 @@ public class PersonGroup {
 
 			// Request headers. Replace the example key with your valid subscription key.
 			request.setHeader("Content-Type", "application/json");
-			request.setHeader("Ocp-Apim-Subscription-Key", this.subscriptionKey);
+			request.setHeader("Ocp-Apim-Subscription-Key", super.getSubscriptionKey());
 
 			HttpResponse response = httpClient.execute(request);
 			HttpEntity entity = response.getEntity();
@@ -190,8 +185,8 @@ public class PersonGroup {
 
 		try {
 
-			URIBuilder builder = new URIBuilder(
-					"https://" + this.server + ".api.cognitive.microsoft.com/face/v1.0/persongroups/" + personGroupId);
+			URIBuilder builder = new URIBuilder("https://" + super.getServer()
+					+ ".api.cognitive.microsoft.com/face/v1.0/persongroups/" + personGroupId);
 
 			URI uri = builder.build();
 
@@ -200,7 +195,7 @@ public class PersonGroup {
 
 			// Request headers. Replace the example key with your valid subscription key.
 			request.setHeader("Content-Type", "application/json");
-			request.setHeader("Ocp-Apim-Subscription-Key", this.subscriptionKey);
+			request.setHeader("Ocp-Apim-Subscription-Key", super.getSubscriptionKey());
 
 			HttpResponse response = httpClient.execute(request);
 			HttpEntity entity = response.getEntity();
@@ -221,7 +216,7 @@ public class PersonGroup {
 
 			try {
 
-				URIBuilder builder = new URIBuilder("https://" + this.server
+				URIBuilder builder = new URIBuilder("https://" + super.getServer()
 						+ ".api.cognitive.microsoft.com/face/v1.0/persongroups/" + personGroupId);
 
 				URI uri = builder.build();
@@ -230,7 +225,7 @@ public class PersonGroup {
 
 				// Request headers. Replace the example key with your valid subscription key.
 				request.setHeader("Content-Type", "application/json");
-				request.setHeader("Ocp-Apim-Subscription-Key", this.subscriptionKey);
+				request.setHeader("Ocp-Apim-Subscription-Key", super.getSubscriptionKey());
 
 				// Request body. The name field is the display name you want for the group (must
 				// be under 128 characters).
